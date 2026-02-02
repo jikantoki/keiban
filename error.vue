@@ -56,7 +56,7 @@ body {
   --color-error: #ffcccc;
   --color-error: #cc2222;
   /** アプリの色 */
-  --accent-color: #00bbee;
+  --accent-color: #89adc5;
   /** アプリの色に合わせた文字色 */
   --accent-text-color: #ffffff;
   /** デフォルトのボーダー角の大きさ */
