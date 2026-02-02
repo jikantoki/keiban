@@ -1,0 +1,111 @@
+{
+  "short_name": "UberUTL",
+  "name": "Uber Utility",
+  "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
+  "lang": "ja-JP",
+  "start_url": "./",
+  "id": "./",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": [
+    "social"
+  ],
+  "icons": [
+    {
+      "src": "../icons/icon-48.webp",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-72.webp",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-96.webp",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-128.webp",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-192.webp",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-256.webp",
+      "type": "image/png",
+      "sizes": "256x256",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../icons/icon-512.webp",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/thumbnail.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "img/thumbnail_smartphone.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "img/mainscreen.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "img/mainscreen_smartphone.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Top",
+      "description": "トップページ",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/img/icon96_transparent.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "description": "このアプリについて",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "/img/icon96_transparent.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "description": "Uberアプリを使いやすくするユーティリティ"
+}

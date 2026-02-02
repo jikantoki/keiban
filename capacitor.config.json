@@ -1,0 +1,15 @@
+{
+  "appId": "xyz.enoki.uberutl",
+  "appName": "UberUTL",
+  "webDir": ".output/public",
+  "plugins": {
+    "server": {
+      "hostname": "uber.enoki.xyz",
+      "androidScheme": "https"
+    },
+    "deepLinks": {
+      "enabled": true,
+      "prefixes": ["uberutl://", "https://uberutl.enoki.xyz"]
+    }
+  }
+}
