@@ -1,7 +1,7 @@
 export default [
   {
     name: 'GITHUB',
-    url: 'https://github.com/jikantoki/uber_utility',
+    url: 'https://github.com/jikantoki/keiban',
     icon: 'mdi-github',
   },
 ]

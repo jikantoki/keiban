@@ -36,7 +36,7 @@ export default {
   computed: {
     availableLocales() {
       return this.$i18n.availableLocales.filter(
-        (i) => i.code !== this.$i18n.locale,
+        (i) => i.code !== this.$i18n.locale
       )
     },
   },
@@ -96,7 +96,7 @@ export default {
         this.env.VUE_APP_API_HOST + url,
         sendObject,
         hd,
-        isPost,
+        isPost
       )
     },
     /**
@@ -209,7 +209,7 @@ export default {
      * @returns 引数に合わせて設定したら0、デフォルトのまま設定したら1
      */
     setTitle: (newTitle) => {
-      let siteName = 'UberUTL'
+      let siteName = 'ケイバン！'
       siteName = Functions.ifEnglishStartUpper(siteName)
       let pageTitle
       let returnCode
@@ -346,7 +346,7 @@ export default {
         now.getDate(),
         0,
         0,
-        0,
+        0
       )
       return today
     },

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "xyz.enoki.uberutl"
+    namespace = "xyz.enoki.keiban"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "xyz.enoki.uberutl"
+        applicationId "xyz.enoki.keiban"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 2
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {

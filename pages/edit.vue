@@ -156,7 +156,7 @@ export default {
   setup() {
     //サーバーサイドで仮のタイトルを設定、mountedで言語ごとに再設定する
     Setup.setTitle('Edit')
-    Setup.setDescription('Uber Utilityの編集画面')
+    Setup.setDescription('ケイバン！の編集画面')
   },
   data() {
     return {
@@ -266,7 +266,7 @@ export default {
           {
             work: JSON.stringify(workData),
             workDate: workData.date.getTime() / 1000,
-          },
+          }
         )
           .then((e) => {
             if (e.body.status === 'ok') {
@@ -318,7 +318,7 @@ export default {
         },
         {
           workId: this.commission[indexNumber].workId,
-        },
+        }
       )
       this.commission.splice(indexNumber, 1)
     },

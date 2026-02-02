@@ -3,7 +3,7 @@
   .wrap
     v-card.content(elevation="4")
       .text-h3
-        span UberUTL
+        span ケイバン！
         //img.ontext(src="/img/icon192.png")
       hr
       img(
@@ -30,10 +30,10 @@
         v-icon(size="x-small" style="vertical-align: baseline;") mdi-security
       hr
       .text-h6 ・パスワードの暗号化
-      p UberUTLでは、アカウントのパスワードを暗号化して保存しています。サーバー管理者でもパスワードの閲覧はできないようになっているので、安心してご利用ください。
+      p ケイバン！では、アカウントのパスワードを暗号化して保存しています。サーバー管理者でもパスワードの閲覧はできないようになっているので、安心してご利用ください。
       hr
       .text-h6 ・データの取り扱い
-      p UberUTLでは、ユーザーのデータを第三者に販売・提供することは一切ありません。データの安全性とプライバシーを最優先に考えています。
+      p ケイバン！では、ユーザーのデータを第三者に販売・提供することは一切ありません。データの安全性とプライバシーを最優先に考えています。
 </template>
 
 <script>

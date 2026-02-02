@@ -5,8 +5,8 @@
     .wrap
       v-card.content(elevation="4")
         .v-content
-          h1.text-h4 こんにちは！UberUTLです！
-          p UberUTLは、個人事業主のためのユーティリティアプリです。
+          h1.text-h4 こんにちは！ケイバン！です！
+          p ケイバン！は、個人事業主のためのユーティリティアプリです。
           p 稼働履歴の登録、分析、ランキング表示などができます。
           hr
         .v-content

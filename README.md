@@ -1,13 +1,13 @@
-# Uber Utility
+# ケイバン！
 
-Uber Driverアプリをもっと楽しく使えるユーティリティ
+個人事業主向けの配送アプリをもっと楽しく使えるユーティリティ
 
 ![Thumbnail](thumbnail.jpg)
 ![Main Screen](mainscreen.jpg)
 
 ## Our Mission
 
-使いにくいUber Driverアプリに不足している機能を補う
+使いにくい個人事業主向けの配送アプリに不足している機能を補う
 
 ## Included（予定を含む）
 
@@ -19,27 +19,27 @@ Uber Driverアプリをもっと楽しく使えるユーティリティ
 
 ## 動作環境
 
-- JavaScriptが動作する環境
-- WPAでアプリとして利用可能
-- Androidに限り、APKファイルで配布するかも
+- JavaScript が動作する環境
+- WPA でアプリとして利用可能
+- Android に限り、APK ファイルで配布するかも
 
 ---
 
-ここから下はテンプレートのREADMEです
+ここから下はテンプレートの README です
 
 ---
 
 ## Nuxt3 Template
 
-Nuxtを簡単にインストールしてすぐ使うためのテンプレート
+Nuxt を簡単にインストールしてすぐ使うためのテンプレート
 
 - NOLICENSED ご自由にお使いください
 
 ## 前提
 
-Node.jsとnpmとyarnくらい入ってるよね！（投げやり）
-デプロイ先はVercelを想定してるけど多分どこでも動きます
-あとPHPのcomposerも用意してね
+Node.js と npm と yarn くらい入ってるよね！（投げやり）
+デプロイ先は Vercel を想定してるけど多分どこでも動きます
+あと PHP の composer も用意してね
 
 ## INCLUDED
 
@@ -49,8 +49,8 @@ Node.jsとnpmとyarnくらい入ってるよね！（投げやり）
 - Vuetify ダークテーマ
 - Nuxt3
 - Vue-router
-- VSCode、Git、Eslint、Prettier周りの設定ファイル
-- PugとSASS
+- VSCode、Git、Eslint、Prettier 周りの設定ファイル
+- Pug と SASS
 - PWA Preset
 - Google Fonts
 - Vue Content Loader
@@ -60,14 +60,14 @@ Node.jsとnpmとyarnくらい入ってるよね！（投げやり）
 - Cookie API
 - Ajax API
 - 画面を右スワイプでメニュー表示
-- イイカンジにカスタマイズされたSCSSファイル
-- コピペで使えるpugテンプレート
+- イイカンジにカスタマイズされた SCSS ファイル
+- コピペで使える pug テンプレート
 - 汎用性の高い関数群
 - ダークテーマ切り替えボタン
 - Push API（使いやすいように改良）
 - Notification API（使いやすいように改良）
 - アカウント登録時のメールアドレス認証、アクセストークンの発行
-- MySQL用API
+- MySQL 用 API
 
 ## 制作予定
 
@@ -75,10 +75,10 @@ Node.jsとnpmとyarnくらい入ってるよね！（投げやり）
 
 ## 注意
 
-ポート12345で動くようにしてあります  
-VSCodeでの利用を推奨
+ポート 12345 で動くようにしてあります  
+VSCode での利用を推奨
 
-~~Vue3慣れてなくてOptions API使ってるけど許して~~
+~~Vue3 慣れてなくて Options API 使ってるけど許して~~
 
 ## 参考資料
 
@@ -86,7 +86,7 @@ WebPush https://tech.excite.co.jp/entry/2021/06/30/104213
 
 ## Setup
 
-このプログラムは、表示用サーバーと処理用サーバーの2つが必要です
+このプログラムは、表示用サーバーと処理用サーバーの 2 つが必要です
 
 ### 表示用サーバー
 
@@ -96,13 +96,13 @@ echo 'これだけでセットアップ完了！'
 echo 'Vercelとかでデプロイしたらそのまま動く'
 ```
 
-### WebPush用の鍵を作成
+### WebPush 用の鍵を作成
 
 ここで作れます https://web-push-codelab.glitch.me/
 
 #### ストレージを操作できる環境の場合
 
-ルートに.envファイルを作成し、以下のように記述（クォーテーション不要）
+ルートに.env ファイルを作成し、以下のように記述（クォーテーション不要）
 
 ```env
 VUE_APP_WEBPUSH_PUBLICKEY=パブリックキーをコピー
@@ -115,20 +115,20 @@ VUE_APP_API_ACCESSKEY=後のPHPで作成するアクセスキー
 VUE_APP_API_HOST=APIサーバーのホスト
 ```
 
-#### それ以外（Vercelデプロイ等）
+#### それ以外（Vercel デプロイ等）
 
 Project Settings → Enviroment Variables を開く  
-上記.envファイルと同じ感じで設定
+上記.env ファイルと同じ感じで設定
 
-### PHPサーバー（内部処理用）
+### PHP サーバー（内部処理用）
 
-サーバーサイドはPHPで開発しているため、一部処理を実行するにはPHPサーバーの用意が必要です  
+サーバーサイドは PHP で開発しているため、一部処理を実行するには PHP サーバーの用意が必要です  
 とりあえずレンタルサーバーでも借りれば実行できます
 
-1. API用のドメインをクライアント側（Vercel等）とは別で用意する
-2. このリポジトリのphpフォルダをドメインのルートにする（.htaccess等で）
-3. （準備中！！！）にAPI用のドメインを記述
-4. リポジトリルート直下に/env.phpを用意し、以下の記述をする
+1. API 用のドメインをクライアント側（Vercel 等）とは別で用意する
+2. このリポジトリの php フォルダをドメインのルートにする（.htaccess 等で）
+3. （準備中！！！）に API 用のドメインを記述
+4. リポジトリルート直下に/env.php を用意し、以下の記述をする
 
 ```php
 <?php
@@ -155,7 +155,7 @@ define('SMTP_Port', 587); //基本は587を使えば大丈夫
 
 ```
 
-#### PHPサーバー用の.htaccessの用意
+#### PHP サーバー用の.htaccess の用意
 
 大体こんな感じで設定する
 
@@ -174,34 +174,34 @@ Header append Access-Control-Allow-Origin: "*"
 
 ```
 
-### MySQLの用意
+### MySQL の用意
 
-#### /database.sqlファイルをインポートする
+#### /database.sql ファイルをインポートする
 
-PHPMyAdminが使える環境ならDB直下にインポートして終わり、コマンドラインでやる方法は知らん
+PHPMyAdmin が使える環境なら DB 直下にインポートして終わり、コマンドラインでやる方法は知らん
 
 #### ※インポートでエラーが出たら
 
-/database_VIEW.sql の中身をコピーしてphpmyadminで直接実行
+/database_VIEW.sql の中身をコピーして phpmyadmin で直接実行
 
-### デフォルトAPIのトークンを用意する
+### デフォルト API のトークンを用意する
 
-このプログラムは独自のアクセストークンを利用してAPIにアクセスします。  
-そのため、初回APIを登録する作業が必要です。
+このプログラムは独自のアクセストークンを利用して API にアクセスします。  
+そのため、初回 API を登録する作業が必要です。
 
-1. セットアップしたAPI用サーバーの/makeApiForAdmin.phpにアクセス
-2. 初回アクセス時のみMySQLで登録作業が行われるので、出てきた画面の内容をコピー
-3. .envにｲｲｶﾝｼﾞに内容を記述（書き方はさっき説明した）
-4. 以後、その値を使ってAPIを操作できます
+1. セットアップした API 用サーバーの/makeApiForAdmin.php にアクセス
+2. 初回アクセス時のみ MySQL で登録作業が行われるので、出てきた画面の内容をコピー
+3. .env にｲｲｶﾝｼﾞに内容を記述（書き方はさっき説明した）
+4. 以後、その値を使って API を操作できます
 
 **忘れたらリセット**するしかないので注意！（一部データは暗号化されており、管理者でも確認できません）
 
-#### デフォルトAPIトークンのリセット方法
+#### デフォルト API トークンのリセット方法
 
-1. MySQLのapi_listテーブルのsecretId='default'を削除
-2. api_listForViewのsecretId='default'も同様に削除
+1. MySQL の api_list テーブルの secretId='default'を削除
+2. api_listForView の secretId='default'も同様に削除
 3. 初回登録と同じ感じでやる
-4. データベースに再度defaultが追加されていることを確認
+4. データベースに再度 default が追加されていることを確認
 
 ## コンソール側で初期化
 
@@ -223,7 +223,7 @@ yarn run dev
 | アプリ名       | /package.json                |
 | フォント       | /layout/default.vue          |
 | ナビゲーション | /items/itemNavigationList.js |
-| 404ページ      | /error.vue                   |
+| 404 ページ     | /error.vue                   |
 
 ### Compiles and minifies for production
 
@@ -243,6 +243,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## トラブルシューティング
 
-### PHPがおかしい
+### PHP がおかしい
 
-composerちゃんと入れた？
+composer ちゃんと入れた？

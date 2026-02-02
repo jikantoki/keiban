@@ -30,7 +30,7 @@
       p(v-if="!userData")
       p(
         v-else-if="userData && userData.status != 'ng'"
-        ) {{ new Date(userData.createdAt * 1000) }}からUberUTLを利用しています
+        ) {{ new Date(userData.createdAt * 1000) }}からケイバン！を利用しています
       p(v-else) ユーザーが存在しません
     //.share-and-sns-links.px-2
       .share-buttons
@@ -179,7 +179,7 @@ export default {
     this.userData = await this.getProfile(this.param.userId)
     if (this.userData) {
       this.setTitle(
-        this.userData.userName ? this.userData.userName : this.userData.userId,
+        this.userData.userName ? this.userData.userName : this.userData.userId
       )
       if (this.userData.status == 'invalid') {
         //ログインしていないので閲覧不可
@@ -208,7 +208,7 @@ export default {
         {
           title: `${this.userStore.userId}からのメッセージ`,
           message: this.pushMessage,
-        },
+        }
       )
         .then((e) => {
           this.successMessage = true

@@ -1,18 +1,14 @@
 {
-  "short_name": "UberUTL",
-  "name": "Uber Utility",
+  "short_name": "ケイバン！",
+  "name": "ケイバン！",
   "display": "standalone",
-  "display_override": [
-    "standalone"
-  ],
+  "display_override": ["standalone"],
   "lang": "ja-JP",
   "start_url": "./",
   "id": "./",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "categories": [
-    "social"
-  ],
+  "categories": ["social"],
   "icons": [
     {
       "src": "../icons/icon-48.webp",
@@ -107,5 +103,5 @@
       ]
     }
   ],
-  "description": "Uberアプリを使いやすくするユーティリティ"
+  "description": "個人事業主向け配送アプリを使いやすくするユーティリティ"
 }

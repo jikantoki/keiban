@@ -1,4 +1,4 @@
-package xyz.enoki.uberutl;
+package xyz.enoki.keiban;
 
 import com.getcapacitor.BridgeActivity;
 

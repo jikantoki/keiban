@@ -11,7 +11,7 @@
         common-bar(
           v-if="!userStore.userId && !loginPageFlag"
           title="ログインして、使ってみよう"
-          subTitle="UberUTLで、稼働履歴や統計を見てみよう"
+          subTitle="ケイバン！で、稼働履歴や統計を見てみよう"
           :buttons="commonBarButtons"
           )
         //- common-bar(
@@ -176,9 +176,9 @@ export default {
             authtoken: webPush.authToken,
           },
           {
-            title: `UberUTL`,
+            title: `ケイバン！`,
             message: 'プッシュ通知の許可に成功しました！',
-          },
+          }
         )
         return webPush
       } else {
