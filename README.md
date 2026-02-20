@@ -1,134 +1,124 @@
 # ケイバン！
 
-個人事業主向けの配送アプリをもっと楽しく使えるユーティリティ
+個人事業主向けの稼働管理・分析ユーティリティアプリ
+
+🌐 **公開URL**: https://keiban.enoki.xyz
 
 ![Thumbnail](thumbnail.jpg)
 ![Main Screen](mainscreen.jpg)
 
 ## Our Mission
 
-使いにくい個人事業主向けの配送アプリに不足している機能を補う
+個人事業主（フリーランス配達員など）の稼働管理をサポートし、時給計算・実績分析・燃費記録などの機能を提供する
 
-## Included（予定を含む）
+## 機能
 
-- 自動で時給計算
-- 目標の稼働時間や報酬を設定し、目標稼働時間を表示
-- カレンダー機能でいつ何円稼いだか表示
+- 稼働履歴の登録・管理
+- 日付別に経費・メモを記録
+- 時給の自動計算
+- グラフ・カレンダーで実績を確認
+- 週・月・年・曜日ごとの統計表示
 - 走行距離からざっくり燃費の計算
-- 過去データや他配達員データからの分析とランキング
+- 他ユーザーとのランキング比較
+- プッシュ通知対応
 
 ## 動作環境
 
-- JavaScript が動作する環境
-- WPA でアプリとして利用可能
-- Android に限り、APK ファイルで配布するかも
+- PWA（Progressive Web App）としてブラウザからインストール可能
+- Android 向け APK / AAB ファイルを同梱（Capacitor ビルド）
+- iOS は PWA としての利用を想定
 
----
+## 技術スタック
 
-ここから下はテンプレートの README です
+| カテゴリ       | 使用技術                                    |
+| -------------- | ------------------------------------------- |
+| フロントエンド | Nuxt 4 / Vue 3 / Vuetify 3                  |
+| 状態管理       | Pinia（localStorage 永続化）                |
+| テンプレート   | Pug + SASS                                  |
+| 多言語対応     | vue-i18n（日本語・英語）                    |
+| モバイル       | Capacitor（Android）                        |
+| バックエンド   | PHP + Composer                              |
+| データベース   | MySQL                                       |
+| デプロイ先     | Vercel（フロントエンド）＋ PHP レンタルサーバー |
 
----
+## ファイル構成
 
-## Nuxt3 Template
-
-Nuxt を簡単にインストールしてすぐ使うためのテンプレート
-
-- NOLICENSED ご自由にお使いください
-
-## 前提
-
-Node.js と npm と yarn くらい入ってるよね！（投げやり）
-デプロイ先は Vercel を想定してるけど多分どこでも動きます
-あと PHP の composer も用意してね
-
-## INCLUDED
-
-- Vue CLI Service
-- Vue3
-- Vuetify3
-- Vuetify ダークテーマ
-- Nuxt3
-- Vue-router
-- VSCode、Git、Eslint、Prettier 周りの設定ファイル
-- Pug と SASS
-- PWA Preset
-- Google Fonts
-- Vue Content Loader
-
-## 独自実装
-
-- Cookie API
-- Ajax API
-- 画面を右スワイプでメニュー表示
-- イイカンジにカスタマイズされた SCSS ファイル
-- コピペで使える pug テンプレート
-- 汎用性の高い関数群
-- ダークテーマ切り替えボタン
-- Push API（使いやすいように改良）
-- Notification API（使いやすいように改良）
-- アカウント登録時のメールアドレス認証、アクセストークンの発行
-- MySQL 用 API
-
-## 制作予定
-
-- リッチエディタ
-
-## 注意
-
-ポート 12345 で動くようにしてあります  
-VSCode での利用を推奨
-
-~~Vue3 慣れてなくて Options API 使ってるけど許して~~
-
-## 参考資料
-
-WebPush https://tech.excite.co.jp/entry/2021/06/30/104213
-
-## Setup
-
-このプログラムは、表示用サーバーと処理用サーバーの 2 つが必要です
-
-### 表示用サーバー
-
-```shell
-git clone git@github.com:jikantoki/nuxt3temp.git
-echo 'これだけでセットアップ完了！'
-echo 'Vercelとかでデプロイしたらそのまま動く'
+```
+/
+├── assets/               # SCSS スタイル・アイコン画像
+├── components/
+│   └── common/           # 共通コンポーネント（ヘッダー・フッター・バー等）
+├── composables/          # Vue Composables（状態・テーマ・ユーザー・ロケール等）
+├── items/                # ナビゲーション定義・ローディング部品
+├── js/                   # ユーティリティ関数（Ajax・WebPush・メタ情報等）
+├── layouts/              # アプリ共通レイアウト（default.vue）
+├── locales/              # i18n ファイル（en.js / ja.js）
+├── mixins/               # Vue Mixin
+├── pages/                # ページコンポーネント
+│   ├── index.vue         # トップページ
+│   ├── calendar.vue      # カレンダー
+│   ├── edit.vue          # 稼働履歴の編集
+│   ├── fuel.vue          # 燃費計算
+│   ├── history.vue       # 稼働履歴一覧
+│   ├── analytics.vue     # 分析・グラフ
+│   ├── settings.vue      # 設定
+│   ├── about.vue         # このアプリについて
+│   ├── login.vue         # ログイン
+│   ├── registar.vue      # 新規登録
+│   ├── rule.vue          # 利用規約
+│   └── [userId].vue      # ユーザープロフィール
+├── php/                  # PHP API サーバー
+├── public/               # 静的ファイル（favicon・manifest.json 等）
+├── nuxt.config.ts        # Nuxt 設定
+├── capacitor.config.json # Capacitor（Android）設定
+├── package.json          # npm 依存関係
+├── database.sql          # MySQL スキーマ
+└── database_VIEW.sql     # MySQL ビュー定義
 ```
 
-### WebPush 用の鍵を作成
+## セットアップ
 
-ここで作れます https://web-push-codelab.glitch.me/
+このアプリはフロントエンドサーバーと PHP バックエンドサーバーの 2 つが必要です。
 
-#### ストレージを操作できる環境の場合
+### 前提条件
 
-ルートに.env ファイルを作成し、以下のように記述（クォーテーション不要）
+- Node.js + yarn
+- PHP + Composer
+- MySQL
+
+### 1. リポジトリのクローン・依存関係のインストール
+
+```shell
+git clone git@github.com:jikantoki/keiban.git
+cd keiban
+yarn install
+composer install  # PHP 用
+```
+
+### 2. 環境変数の設定
+
+ルートに `.env` ファイルを作成し、以下のように記述（Vercel の場合は Project Settings → Environment Variables で設定）
 
 ```env
-VUE_APP_WEBPUSH_PUBLICKEY=パブリックキーをコピー
-VUE_APP_WEBPUSH_PRIVATEKEY=プライベートキーをコピー
+VUE_APP_WEBPUSH_PUBLICKEY=パブリックキー
+VUE_APP_WEBPUSH_PRIVATEKEY=プライベートキー
 
 VUE_APP_API_ID=default
-VUE_APP_API_TOKEN=後のPHPで作成するアクセストークン
-VUE_APP_API_ACCESSKEY=後のPHPで作成するアクセスキー
+VUE_APP_API_TOKEN=PHPで発行するアクセストークン
+VUE_APP_API_ACCESSKEY=PHPで発行するアクセスキー
 
 VUE_APP_API_HOST=APIサーバーのホスト
 ```
 
-#### それ以外（Vercel デプロイ等）
+WebPush 用の鍵はここで発行できます: https://web-push-codelab.glitch.me/
 
-Project Settings → Enviroment Variables を開く  
-上記.env ファイルと同じ感じで設定
+### 3. PHP サーバーの設定
 
-### PHP サーバー（内部処理用）
+PHP バックエンドが必要な処理（API・認証・通知など）はレンタルサーバー等に `php/` フォルダをデプロイします。
 
-サーバーサイドは PHP で開発しているため、一部処理を実行するには PHP サーバーの用意が必要です  
-とりあえずレンタルサーバーでも借りれば実行できます
-
-1. API 用のドメインをクライアント側（Vercel 等）とは別で用意する
-2. このリポジトリの php フォルダをドメインのルートにする（.htaccess 等で）
-3. （準備中！！！）に API 用のドメインを記述
-4. リポジトリルート直下に/env.php を用意し、以下の記述をする
+1. API 用ドメインをフロントエンドとは別に用意する
+2. `php/` フォルダをドメインのルートに配置（`.htaccess` 等で設定）
+3. リポジトリルート直下に `/env.php` を作成し、以下を記述する
 
 ```php
 <?php
@@ -137,7 +127,7 @@ define('DIRECTORY_NAME', '/プロジェクトルートのディレクトリ名')
 define('VUE_APP_WebPush_PublicKey', 'パブリックキー');
 define('VUE_APP_WebPush_PrivateKey', 'プライベートキー');
 define('WebPush_URL', 'プッシュ通知を使うドメイン');
-define('WebPush_URL_dev', 'プッシュ通知を使うドメイン（開発用）');//この行は無くても良い
+define('WebPush_URL_dev', 'プッシュ通知を使うドメイン（開発用）'); // この行は無くても良い
 define('WebPush_icon', 'プッシュ通知がスマホに届いたときに表示するアイコンURL');
 define('Default_user_icon', 'アイコン未設定アカウント用の初期アイコンURL');
 
@@ -151,98 +141,105 @@ define('SMTP_Username', 'SMTPユーザー名');
 define('SMTP_Mailaddress', '送信に使うメールアドレス');
 define('SMTP_Password', 'SMTPパスワード');
 define('SMTP_Server', 'SMTPサーバー');
-define('SMTP_Port', 587); //基本は587を使えば大丈夫
-
+define('SMTP_Port', 587); // 基本は587を使えば大丈夫
 ```
 
-#### PHP サーバー用の.htaccess の用意
-
-大体こんな感じで設定する
+#### PHP サーバー用の `.htaccess`
 
 ```htaccess
-#トップページを/nuxt3temp/php にする
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteBase /
-RewriteRule ^$ nuxt3temp/php/ [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)$ nuxt3temp/php/$1 [L]
+RewriteRule ^(.+)$ keiban/php/$1 [L]
 </IfModule>
 # 外部からのAPIへのアクセスを許可
 Header append Access-Control-Allow-Origin: "*"
-
 ```
 
-### MySQL の用意
+> 📝 `keiban/php` の部分はサーバー上の実際のディレクトリ構造に合わせて変更してください。
 
-#### /database.sql ファイルをインポートする
+### 4. MySQL のセットアップ
 
-PHPMyAdmin が使える環境なら DB 直下にインポートして終わり、コマンドラインでやる方法は知らん
+`/database.sql` ファイルを MySQL データベースにインポートします。
 
-#### ※インポートでエラーが出たら
+- phpMyAdmin が使える環境: DB 直下にインポートして終わり
+- インポートでエラーが出た場合: `/database_VIEW.sql` の中身をそのまま phpMyAdmin で実行
 
-/database_VIEW.sql の中身をコピーして phpmyadmin で直接実行
+### 5. デフォルト API トークンの発行
 
-### デフォルト API のトークンを用意する
+初回のみ API トークンの登録が必要です。
 
-このプログラムは独自のアクセストークンを利用して API にアクセスします。  
-そのため、初回 API を登録する作業が必要です。
+1. セットアップした API サーバーの `/makeApiForAdmin.php` にアクセス
+2. 表示された内容を `.env`（または Vercel の環境変数）にコピー
+3. 以後その値で API を操作できます
 
-1. セットアップした API 用サーバーの/makeApiForAdmin.php にアクセス
-2. 初回アクセス時のみ MySQL で登録作業が行われるので、出てきた画面の内容をコピー
-3. .env にｲｲｶﾝｼﾞに内容を記述（書き方はさっき説明した）
-4. 以後、その値を使って API を操作できます
+> ⚠️ **注意**: トークンを忘れた場合はリセットが必要です（一部データは暗号化されており管理者でも確認不可）
 
-**忘れたらリセット**するしかないので注意！（一部データは暗号化されており、管理者でも確認できません）
+#### API トークンのリセット方法
 
-#### デフォルト API トークンのリセット方法
+1. MySQL の `api_list` テーブルの `secretId='default'` を削除
+2. `api_listForView` の `secretId='default'` も同様に削除
+3. 初回登録と同じ手順で再発行
 
-1. MySQL の api_list テーブルの secretId='default'を削除
-2. api_listForView の secretId='default'も同様に削除
-3. 初回登録と同じ感じでやる
-4. データベースに再度 default が追加されていることを確認
+## 開発
 
-## コンソール側で初期化
+### 開発サーバーの起動（ポート 7777）
 
 ```shell
-yarn install
-composer install #PHP用
+yarn dev
 ```
 
-### 実行
-
-```shell
-yarn run dev
-```
-
-### 設定方法
-
-| 項目           | 設定箇所                     |
-| -------------- | ---------------------------- |
-| アプリ名       | /package.json                |
-| フォント       | /layout/default.vue          |
-| ナビゲーション | /items/itemNavigationList.js |
-| 404 ページ     | /error.vue                   |
-
-### Compiles and minifies for production
+### ビルド
 
 ```shell
 yarn build
 ```
 
-### Lints and fixes files
+### 静的ファイル生成
+
+```shell
+yarn generate
+```
+
+### プレビュー
+
+```shell
+yarn preview
+```
+
+### Lint
 
 ```shell
 yarn lint
 ```
 
-### Customize configuration
+## カスタマイズ
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+| 項目           | 設定箇所                       |
+| -------------- | ------------------------------ |
+| アプリ名       | `/package.json`                |
+| フォント       | `/layouts/default.vue`         |
+| ナビゲーション | `/items/itemNavigationList.js` |
+| 404 ページ     | `/error.vue`                   |
+| Nuxt 設定      | `/nuxt.config.ts`              |
+| Android 設定   | `/capacitor.config.json`       |
 
 ## トラブルシューティング
 
 ### PHP がおかしい
 
-composer ちゃんと入れた？
+`composer install` を実行しましたか？
+
+### yarn dev が起動しない
+
+`yarn install` を実行してから再度試してみてください。
+
+### プッシュ通知が届かない
+
+`/env.php` の WebPush キーと `.env` のキーが一致しているか確認してください。
+
+## 参考資料
+
+- WebPush 実装: https://tech.excite.co.jp/entry/2021/06/30/104213
